@@ -1,30 +1,45 @@
+# 🛡 Electron Security Monitor
 
+*Electron Security Monitor* is a cross-platform desktop application built with *Electron.js* that functions as a lightweight *Intrusion Detection System (IDS). It continuously monitors your system for **security threats, checks for **malware, tracks **system update status, and provides **real-time alerts* to help protect your system.
 
-# 🛡 Electron Malware Scanner
+## 🚀 Features
 
-**Electron Malware Scanner** is a lightweight, cross-platform desktop application built with *Electron.js* that enables users to upload and scan files for potential *malware or embedded threats*. It serves as a practical demonstration of how Electron can power desktop apps with basic malware detection capabilities.
+- 🔐 *Intrusion Detection*: Monitors for suspicious changes or unauthorized access attempts.
+- 📦 *Malware Scanning*: Scans specific files or directories for known malicious patterns.
+- ⚙ *System Update Check*: Verifies whether the operating system and security updates are up to date.
+- 🔔 *Real-Time Alerts*: Notifies users of potential threats or required actions.
+- 📈 *Security Dashboard*: Simple and intuitive UI showing the system's current security status.
 
-## 🚀 Key Features
+## 🧠 How It Works
 
-* 🗂 **File Upload**: Easily select and upload files from your system for scanning.
-* 🔍 **Malware Detection**: Analyzes files for common indicators of malicious behavior.
-* 📄 **Threat Report**: Provides a clear verdict—*Safe* or *Suspicious*—based on built-in detection rules.
-* ⚙ **Electron-Powered**: Runs seamlessly on Windows, macOS, and Linux.
-* 🧠 **Basic Static & Heuristic Analysis**: Utilizes pattern matching and lightweight heuristics to identify potential threats.
+1. On startup, the app runs background scans and update checks.
+2. It uses basic static analysis to detect malware signatures in selected files.
+3. Monitors for unusual file changes or processes (optional hooks for log/event tracking).
+4. Generates alerts for:
+   - Outdated system updates
+   - Suspicious files or processes
+   - Security breaches or intrusion attempts
+🛠 Getting Started
+Follow the steps below to install dependencies and run the Security Monitor desktop application built with Electron.
 
-## 🧪 How It Works
+📦 Prerequisites
+Node.js (v18+ recommended)
 
-1. Users upload a file via the intuitive graphical interface.
-2. The application performs analysis using:
+npm (comes with Node.js)
 
-   * Pattern recognition for malicious signatures or keywords.
-   * Detection of obfuscated code, known exploit markers, or abnormal metadata.
-3. A verdict is presented: ✅ *Safe* or ⚠ *Suspicious*, with a brief explanation.
+Git (optional, for cloning)
 
-## 🧰 Tech Stack
+🚀 Setup Instructions
+1. Clone the repository:
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+2. Initialize npm (if package.json doesn’t exist):
+   npm init -y
+3. Install dependencies:
+   npm install
+4. Install Electron globally (optional):
+   npm install -g electron
 
-* **[Electron.js](https://www.electronjs.org/)** – For building the cross-platform desktop environment.
-* **[Node.js](https://nodejs.org/)** – Handles backend operations and file processing.
-* **HTML, CSS, JavaScript** – Powering the UI and core detection logic.
-
-
+🖥 Running the App
+To run the Electron app:
+-> npx electron .
