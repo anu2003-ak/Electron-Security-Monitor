@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Monitor</title>
+</head>
+<body>
+    <h2>Website Security Scanner</h2>
+    <input type="text" id="urlInput" placeholder="Enter a URL">
+    <button onclick="scanWebsite()">Scan</button>
+    <pre id="result"></pre>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+
+        function scanWebsite() {
+            const url = document.getElementById('urlInput').value;
+            document.getElementById('result').innerText = "Scanning...";
+
+            ipcRenderer.send('scan-website', url);
+
+            ipcRenderer.on('scan-result', (event, result) => {
+                document.getElementById('result').innerText = result;
+            });
+        }
+    </script>
+</body>
+</html>
